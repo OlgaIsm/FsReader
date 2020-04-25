@@ -6,13 +6,13 @@ void NTFS::bootInfo() {
 	string fileNameF = "\\\\.\\" + this->fileName + ":";
 
 	HANDLE fileHandle = CreateFileA(
-		fileNameF.c_str(), // 
-		GENERIC_READ,	  // 
-		FILE_SHARE_READ | FILE_SHARE_WRITE, // 
-		NULL, // 
-		OPEN_EXISTING, // 
-		FILE_ATTRIBUTE_NORMAL, // 
-		NULL // 
+		fileNameF.c_str(), // File Name (WCHAR *)
+		GENERIC_READ,	  // Access Mode
+		FILE_SHARE_READ | FILE_SHARE_WRITE, // Collaboration mode
+		NULL, // Security Attributes
+		OPEN_EXISTING, // Opening Method
+		FILE_ATTRIBUTE_NORMAL, // Flags And Attributes
+		NULL // Descriptor (identifier) of the template file with GENERIC_READ authority
 	);
 
 	// Error handling

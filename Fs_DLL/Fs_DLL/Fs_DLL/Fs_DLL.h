@@ -1,10 +1,10 @@
 #pragma once
 
 // Export or Import form DLL
-#ifdef FS_EXPORTS
-#define FS_export_API __declspec(dllexport)
+#ifdef Fs_DLL_EXPORTS
+#define Fs_DLL_API __declspec(dllexport)
 #else
-#define FS_import_API __declspec(dllimport)
+#define Fs_DLL_API __declspec(dllimport)
 #endif
 
 #include <iostream>
@@ -80,4 +80,4 @@ private:
 };
 
 // Declaring functions
-extern "C++" FS_import_API void getInfo(string fileName);
+extern "C++" Fs_DLL_API void printFS(string fileName);
